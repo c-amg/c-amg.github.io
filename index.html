@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-TCP并发连接数与请求数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/">TCP并发连接数与请求数</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2021-07-21T10:12:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="并发连接数-SBC-Simultaneous-Browser-Connections"><a href="#并发连接数-SBC-Simultaneous-Browser-Connections" class="headerlink" title="并发连接数-SBC(Simultaneous Browser Connections)"></a>并发连接数-SBC(Simultaneous Browser Connections)</h2><p>并发连接数：是指客户端向服务端发起请求，并建立了TCP连接。每秒钟服务器连接的总TCP数量，就是并发连接数</p>
+<h2 id="请求数-QPS（Query-Per-Second-Rps-Request-Per-Second"><a href="#请求数-QPS（Query-Per-Second-Rps-Request-Per-Second" class="headerlink" title="请求数-QPS（Query Per Second)/Rps(Request Per Second)"></a>请求数-QPS（Query Per Second)/Rps(Request Per Second)</h2><p>请求数有2个缩写，可以叫QPS也可以叫RPS。单位是每秒多少请求。Query=查询，也相当于请求。</p>
+<p>请求数：<br>    是指客户端在建立完连接后，向http服务发出Get/POST/HEAD数据包，服务器返回了请求后有两种情况：</p>
+<blockquote>
+<p>http数据包头包含Close字样，关闭本次TCP连接<br>http数据包头包含Keep-Alive字样，本次连接不关闭，可继续通过该连接继续向http服务发送请求，用于减少TCP并发连接数。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tcp并发连接数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-OSI七层参考模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -858,83 +937,6 @@
 
 
   
-    <article id="post-centos安装docker容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/29/centos%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8/">centos安装docker容器</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/29/centos%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2021-06-29T13:40:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="docker项目背景"><a href="#docker项目背景" class="headerlink" title="docker项目背景"></a>docker项目背景</h3><p>Docker 是基于Go 语言实现的开源容器项目，诞生于2013 年年初，最初发起者是 dotCloud 公司。Docker 自开源后受到广泛的关注和l 讨论，目前已有多个相关项目（包括 Docker 三剑客、Kubemetes 等），逐渐形成了围绕Docker 容器的生态体系。 由于Docker 在业界造成的影响力实在太大， dotCloud 公司后来也直接改名为Docker Inc ，并专注于Docker 相关技术和产品的开发。</p>
-<h3 id="docker概念"><a href="#docker概念" class="headerlink" title="docker概念"></a>docker概念</h3><p>Docker 是世界领先的软件容器平台。开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。</p>
-        
-          <a class="article-more-a" href="/2021/06/29/centos%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/29/centos%E5%AE%89%E8%A3%85docker%E5%AE%B9%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1073,6 +1075,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">OSI模型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">tcp并发连接数</a>
               </li>
             
             <div class="clearfix"></div>
