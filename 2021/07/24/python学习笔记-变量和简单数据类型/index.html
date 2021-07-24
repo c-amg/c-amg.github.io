@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>smartDNS入门 | Hexo</title>
+  <title>python学习笔记-变量和简单数据类型 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是smartDNS?SmartDNS是一个运行在本地的DNS服务器，SmartDNS接受本地客户端的DNS查询请求，从多个上游DNS服务器获取DNS查询结果，并将访问速度最快的结果返回给客户端，提高网络访问速度。 同时支持指定特定域名IP地址，并高性匹配，达到过滤广告的效果。 原理1.SmartDNS接收本地网络设备的DNS查询请求，如PC，手机的查询请求。2.SmartDNS将查询请求发送到">
+  <meta name="description" content="变量与常量变量（Variable）可以看成一个小箱子，专门用来“盛装”程序中的数据。每个变量都拥有独一无二的名字，通过变量的名字就能找到变量中的数据。   从底层看，程序中的数据最终都要放到内存（内存条）中，变量其实就是这块内存的名字    和变量相对应的是常量（Constant），它们都是用来“盛装”数据的小箱子，不同的是：变量保存的数据可以被多次修改，而常量一旦保存某个数据之后就不能修改了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="smartDNS入门">
-<meta property="og:url" content="http://example.com/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:title" content="python学习笔记-变量和简单数据类型">
+<meta property="og:url" content="http://example.com/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是smartDNS?SmartDNS是一个运行在本地的DNS服务器，SmartDNS接受本地客户端的DNS查询请求，从多个上游DNS服务器获取DNS查询结果，并将访问速度最快的结果返回给客户端，提高网络访问速度。 同时支持指定特定域名IP地址，并高性匹配，达到过滤广告的效果。 原理1.SmartDNS接收本地网络设备的DNS查询请求，如PC，手机的查询请求。2.SmartDNS将查询请求发送到">
+<meta property="og:description" content="变量与常量变量（Variable）可以看成一个小箱子，专门用来“盛装”程序中的数据。每个变量都拥有独一无二的名字，通过变量的名字就能找到变量中的数据。   从底层看，程序中的数据最终都要放到内存（内存条）中，变量其实就是这块内存的名字    和变量相对应的是常量（Constant），它们都是用来“盛装”数据的小箱子，不同的是：变量保存的数据可以被多次修改，而常量一旦保存某个数据之后就不能修改了。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/architecture.6dcinikzwfo0.png">
-<meta property="article:published_time" content="2021-06-30T14:19:57.000Z">
-<meta property="article:modified_time" content="2021-07-19T08:15:56.220Z">
+<meta property="article:published_time" content="2021-07-24T00:33:40.000Z">
+<meta property="article:modified_time" content="2021-07-24T00:43:28.180Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="smartDNS">
+<meta property="article:tag" content="python学习笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/architecture.6dcinikzwfo0.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,47 +155,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-linux-smartDNS入门" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python学习笔记-变量和简单数据类型" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      smartDNS入门
+      python学习笔记-变量和简单数据类型
     </h1>
   
 
         
-        <a href="/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2021-06-30T14:19:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
+        <a href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2021-07-24T00:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="什么是smartDNS"><a href="#什么是smartDNS" class="headerlink" title="什么是smartDNS?"></a>什么是smartDNS?</h2><p>SmartDNS是一个运行在本地的DNS服务器，SmartDNS接受本地客户端的DNS查询请求，从多个上游DNS服务器获取DNS查询结果，并将访问速度最快的结果返回给客户端，提高网络访问速度。 同时支持指定特定域名IP地址，并高性匹配，达到过滤广告的效果。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/architecture.6dcinikzwfo0.png" alt="architecture"><br>1.SmartDNS接收本地网络设备的DNS查询请求，如PC，手机的查询请求。<br>2.SmartDNS将查询请求发送到多个上游DNS服务器，可采用标准UDP查询，非标准端口UDP查询，及TCP查询。<br>3.上游DNS服务器返回域名对应的Server IP地址列表。SmartDNS检测与本地网络访问速度最快的Server IP。<br>4.将访问速度最快的Server IP返回给本地客户端。</p>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="1-多DNS上游服务器"><a href="#1-多DNS上游服务器" class="headerlink" title="1.多DNS上游服务器"></a>1.多DNS上游服务器</h3><p>支持配置多个上游DNS服务器，并同时进行查询，即使其中有DNS服务器异常，也不会影响查询。</p>
-<h3 id="2-返回最快IP地址"><a href="#2-返回最快IP地址" class="headerlink" title="2.返回最快IP地址"></a>2.返回最快IP地址</h3><p>支持从域名所属IP地址列表中查找到访问速度最快的IP地址，并返回给客户端，提高网络访问速度。</p>
-<h3 id="3-支持多种查询协议"><a href="#3-支持多种查询协议" class="headerlink" title="3.支持多种查询协议"></a>3.支持多种查询协议</h3><p>支持UDP，TCP，TLS, HTTPS查询，以及非53端口查询。</p>
-<span id="more"></span>
-<h3 id="4-特定域名IP地址指定"><a href="#4-特定域名IP地址指定" class="headerlink" title="4.特定域名IP地址指定"></a>4.特定域名IP地址指定</h3><p>支持指定域名的IP地址，达到广告过滤效果，避免恶意网站的效果。</p>
-<h3 id="5-域名高性能后缀匹配"><a href="#5-域名高性能后缀匹配" class="headerlink" title="5.域名高性能后缀匹配"></a>5.域名高性能后缀匹配</h3><p>支持域名后缀匹配模式，简化过滤配置，过滤20万条记录时间&lt;1ms</p>
-<h3 id="6-域名分流"><a href="#6-域名分流" class="headerlink" title="6.域名分流"></a>6.域名分流</h3><p>支持域名分流，不同类型的域名到不同的DNS服务器查询。</p>
-<h3 id="7-Linux-Windows多平台支持"><a href="#7-Linux-Windows多平台支持" class="headerlink" title="7.Linux/Windows多平台支持"></a>7.Linux/Windows多平台支持</h3><p>支持标准Linux系统（树莓派），openwrt系统各种固件，华硕路由器原生固件。以及支持Windows 10 WSL (Windows Subsystem for Linux)。</p>
-<h3 id="8-支持IPV4-IPV6双栈"><a href="#8-支持IPV4-IPV6双栈" class="headerlink" title="8.支持IPV4, IPV6双栈"></a>8.支持IPV4, IPV6双栈</h3><p>支持IPV4，IPV6网络，支持查询A, AAAA记录，支持双栈IP速度优化，并支持完全禁用IPV6 AAAA解析。</p>
-<h3 id="9-高性能，占用资源少"><a href="#9-高性能，占用资源少" class="headerlink" title="9.高性能，占用资源少"></a>9.高性能，占用资源少</h3><p>多线程异步IO模式，cache缓存查询结果。</p>
-<h1 id="一、基于linxu系统安装smartDNS"><a href="#一、基于linxu系统安装smartDNS" class="headerlink" title="一、基于linxu系统安装smartDNS"></a>一、基于linxu系统安装smartDNS</h1><h2 id="1、使用wget命令下载安装包"><a href="#1、使用wget命令下载安装包" class="headerlink" title="1、使用wget命令下载安装包"></a>1、使用wget命令下载安装包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/pymumu/smartdns/releases/download/Release33/smartdns.1.2020.09.08-2235.x86_64-linux-all.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="2、解压文件"><a href="#2、解压文件" class="headerlink" title="2、解压文件"></a>2、解压文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf smartdns.1.2020.09.08-2235.x86_64-linux-all.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="3、切换目录"><a href="#3、切换目录" class="headerlink" title="3、切换目录"></a>3、切换目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> smartdns/</span><br></pre></td></tr></table></figure>
-<h2 id="4、修改权限"><a href="#4、修改权限" class="headerlink" title="4、修改权限"></a>4、修改权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ./install</span><br></pre></td></tr></table></figure>
-<h2 id="5、安装smartDNS"><a href="#5、安装smartDNS" class="headerlink" title="5、安装smartDNS"></a>5、安装smartDNS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./install -i</span><br></pre></td></tr></table></figure>
-<h1 id="二、修改配置文件"><a href="#二、修改配置文件" class="headerlink" title="二、修改配置文件"></a>二、修改配置文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/smartdns/smartdns.conf</span><br><span class="line">只需要增加server [IP]:port, server-tcp [IP]:port配置项</span><br></pre></td></tr></table></figure>
-<h1 id="三、开机启动smartDNS"><a href="#三、开机启动smartDNS" class="headerlink" title="三、开机启动smartDNS"></a>三、开机启动smartDNS</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> smartdns</span><br><span class="line">systemctl start smartdns</span><br></pre></td></tr></table></figure>
-<h1 id="四、将DNS请求转发的SmartDNS解析"><a href="#四、将DNS请求转发的SmartDNS解析" class="headerlink" title="四、将DNS请求转发的SmartDNS解析"></a>四、将DNS请求转发的SmartDNS解析</h1><p>修改本地路由器的DNS服务器，将DNS服务器配置为SmartDNS。</p>
-<h1 id="五、检测服务是否配置成功"><a href="#五、检测服务是否配置成功" class="headerlink" title="五、检测服务是否配置成功"></a>五、检测服务是否配置成功</h1><p>使用nslookup -querytype=ptr smartdns查询域名</p>
+        <h2 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h2><pre><code>变量（Variable）可以看成一个小箱子，专门用来“盛装”程序中的数据。每个变量都拥有独一无二的名字，通过变量的名字就能找到变量中的数据。
+</code></pre>
+<blockquote>
+<p>从底层看，程序中的数据最终都要放到内存（内存条）中，变量其实就是这块内存的名字<br>    和变量相对应的是常量（Constant），它们都是用来“盛装”数据的小箱子，不同的是：变量保存的数据可以被多次修改，而常量一旦保存某个数据之后就不能修改了。</p>
+</blockquote>
+<h2 id="变量的命名与使用"><a href="#变量的命名与使用" class="headerlink" title="变量的命名与使用"></a>变量的命名与使用</h2><p>1.变量名只能包含字母、数字和下划线<br>2.变量名不能包含空格<br>3.不能将python的关键字和函数名用作变量名<br>4.慎用小写字母l和大写字母o</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>   字符串就是一系列字符。在python中，用引号括起的都是字符串，其中的引号可以是单引号，也可以是双引号<br>示例：字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;this is a string&quot;</span></span><br><span class="line"><span class="string">&#x27;this is also a string&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用方法修改字符串的大小写"><a href="#使用方法修改字符串的大小写" class="headerlink" title="使用方法修改字符串的大小写"></a>使用方法修改字符串的大小写</h2><p>a.使用.title()修改首字母大小写<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br><span class="line">输出：</span><br><span class="line">Ada Lovelace</span><br></pre></td></tr></table></figure>
+<p>b.使用.upper()修改所有字符大写<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;Ada Lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line">输出：</span><br><span class="line">ADA LOVELACE</span><br></pre></td></tr></table></figure>
+<p>c.使用.lower()修改所有字符小写<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ADA LOVELACE&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br><span class="line">输出：</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+<h2 id="在字符串中使用变量"><a href="#在字符串中使用变量" class="headerlink" title="在字符串中使用变量"></a>在字符串中使用变量</h2><h3 id="f字符串："><a href="#f字符串：" class="headerlink" title="f字符串："></a>f字符串：</h3><blockquote>
+<p>要在字符串中插入变量的值，可爱前引号前加上字母f，在将要插入的变量放在花括号内<br>示例：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = f<span class="string">&quot;&#123;first_name&#125; &#123;last_name&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br><span class="line">输出：</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+<p>进阶示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = f<span class="string">&quot;&#123;first_name&#125; &#123;last_name&#125;&quot;</span></span><br><span class="line">message = f<span class="string">&quot;Hello,&#123;full_name.title()&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line">输出：</span><br><span class="line">Hello,Ada Lovelace</span><br></pre></td></tr></table></figure>
+<h2 id="使用制表符或换行符来添加空白"><a href="#使用制表符或换行符来添加空白" class="headerlink" title="使用制表符或换行符来添加空白"></a>使用制表符或换行符来添加空白</h2><blockquote>
+<p>在编程中，空白泛指任何非打印字符，如空格、制表符和换行符<br>a.在字符串中添加制表符，可以使用字符组合\t<br>示例：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Python&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\tPython&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">Python</span><br><span class="line">	Python</span><br></pre></td></tr></table></figure>
+<p>b.在字符串中添加换行符，可以使用字符组合\n<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Languages:\nPython\nC\nJavaScript&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">Languages:</span><br><span class="line">Python</span><br><span class="line">C</span><br><span class="line">JavaScript</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
 
@@ -232,7 +258,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">smartDNS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python学习笔记</a>
         		</li>
       		
 		</ul>
@@ -288,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,18 +328,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/07/06/nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          nginx学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/06/30/dns%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dns原理入门</div>
+    <a href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TCP并发连接数与请求数</div>
       <i class="icon-circle-right"></i>
     </a>
   

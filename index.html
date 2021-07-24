@@ -152,6 +152,128 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python学习笔记-变量和简单数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">python学习笔记-变量和简单数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2021-07-24T00:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h2><pre><code>变量（Variable）可以看成一个小箱子，专门用来“盛装”程序中的数据。每个变量都拥有独一无二的名字，通过变量的名字就能找到变量中的数据。
+</code></pre>
+<blockquote>
+<p>从底层看，程序中的数据最终都要放到内存（内存条）中，变量其实就是这块内存的名字<br>    和变量相对应的是常量（Constant），它们都是用来“盛装”数据的小箱子，不同的是：变量保存的数据可以被多次修改，而常量一旦保存某个数据之后就不能修改了。</p>
+</blockquote>
+<h2 id="变量的命名与使用"><a href="#变量的命名与使用" class="headerlink" title="变量的命名与使用"></a>变量的命名与使用</h2><p>1.变量名只能包含字母、数字和下划线<br>2.变量名不能包含空格<br>3.不能将python的关键字和函数名用作变量名<br>4.慎用小写字母l和大写字母o</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>   字符串就是一系列字符。在python中，用引号括起的都是字符串，其中的引号可以是单引号，也可以是双引号<br>示例：字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;this is a string&quot;</span></span><br><span class="line"><span class="string">&#x27;this is also a string&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用方法修改字符串的大小写"><a href="#使用方法修改字符串的大小写" class="headerlink" title="使用方法修改字符串的大小写"></a>使用方法修改字符串的大小写</h2><p>a.使用.title()修改首字母大小写<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br><span class="line">输出：</span><br><span class="line">Ada Lovelace</span><br></pre></td></tr></table></figure>
+<p>b.使用.upper()修改所有字符大写<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;Ada Lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line">输出：</span><br><span class="line">ADA LOVELACE</span><br></pre></td></tr></table></figure>
+<p>c.使用.lower()修改所有字符小写<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ADA LOVELACE&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br><span class="line">输出：</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+<h2 id="在字符串中使用变量"><a href="#在字符串中使用变量" class="headerlink" title="在字符串中使用变量"></a>在字符串中使用变量</h2><h3 id="f字符串："><a href="#f字符串：" class="headerlink" title="f字符串："></a>f字符串：</h3><blockquote>
+<p>要在字符串中插入变量的值，可爱前引号前加上字母f，在将要插入的变量放在花括号内<br>示例：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = f<span class="string">&quot;&#123;first_name&#125; &#123;last_name&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br><span class="line">输出：</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+<p>进阶示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = f<span class="string">&quot;&#123;first_name&#125; &#123;last_name&#125;&quot;</span></span><br><span class="line">message = f<span class="string">&quot;Hello,&#123;full_name.title()&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line">输出：</span><br><span class="line">Hello,Ada Lovelace</span><br></pre></td></tr></table></figure>
+<h2 id="使用制表符或换行符来添加空白"><a href="#使用制表符或换行符来添加空白" class="headerlink" title="使用制表符或换行符来添加空白"></a>使用制表符或换行符来添加空白</h2><blockquote>
+<p>在编程中，空白泛指任何非打印字符，如空格、制表符和换行符<br>a.在字符串中添加制表符，可以使用字符组合\t<br>示例：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Python&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\tPython&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">Python</span><br><span class="line">	Python</span><br></pre></td></tr></table></figure>
+<p>b.在字符串中添加换行符，可以使用字符组合\n<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Languages:\nPython\nC\nJavaScript&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">Languages:</span><br><span class="line">Python</span><br><span class="line">C</span><br><span class="line">JavaScript</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-TCP并发连接数与请求数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -858,85 +980,6 @@
 
 
   
-    <article id="post-dns原理入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/dns%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8/">dns原理入门</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/dns%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2021-06-30T07:53:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、什么是dns？"><a href="#一、什么是dns？" class="headerlink" title="一、什么是dns？"></a>一、什么是dns？</h2><pre><code>DNS （Domain Name System 的缩写）的作用非常简单，就是根据域名查出IP地址。你可以把它想象成一本巨大的电话本.举例说明，我们可以直接拨打111.111.111.111 的名字www.xxx.org 来代替电话号码（IP地址）
-</code></pre>
-<h2 id="二、dns的查询方式"><a href="#二、dns的查询方式" class="headerlink" title="二、dns的查询方式"></a>二、dns的查询方式</h2><h3 id="1、递归查询"><a href="#1、递归查询" class="headerlink" title="1、递归查询"></a>1、递归查询</h3><p>  DNS客户端设置使用的DNS服务器一般都是递归服务器，它负责全权处理客户端的DNS查询请求，直到返回最终结果</p>
-<h3 id="2、迭代查询"><a href="#2、迭代查询" class="headerlink" title="2、迭代查询"></a>2、迭代查询</h3><p>  DNS服务器之间一般采用迭代查询方式。</p>
-        
-          <a class="article-more-a" href="/2021/06/30/dns%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dns</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/dns%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1079,6 +1122,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">tcp并发连接数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">python学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
