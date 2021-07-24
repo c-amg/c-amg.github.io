@@ -178,50 +178,9 @@
 <p>从底层看，程序中的数据最终都要放到内存（内存条）中，变量其实就是这块内存的名字<br>    和变量相对应的是常量（Constant），它们都是用来“盛装”数据的小箱子，不同的是：变量保存的数据可以被多次修改，而常量一旦保存某个数据之后就不能修改了。</p>
 </blockquote>
 <h2 id="变量的命名与使用"><a href="#变量的命名与使用" class="headerlink" title="变量的命名与使用"></a>变量的命名与使用</h2><p>1.变量名只能包含字母、数字和下划线<br>2.变量名不能包含空格<br>3.不能将python的关键字和函数名用作变量名<br>4.慎用小写字母l和大写字母o</p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>   字符串就是一系列字符。在python中，用引号括起的都是字符串，其中的引号可以是单引号，也可以是双引号<br>示例：字符串</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;this is a string&quot;</span></span><br><span class="line"><span class="string">&#x27;this is also a string&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用方法修改字符串的大小写"><a href="#使用方法修改字符串的大小写" class="headerlink" title="使用方法修改字符串的大小写"></a>使用方法修改字符串的大小写</h2><p>a.使用.title()修改首字母大小写<br>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br><span class="line">输出：</span><br><span class="line">Ada Lovelace</span><br></pre></td></tr></table></figure>
-<p>b.使用.upper()修改所有字符大写<br>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;Ada Lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line">输出：</span><br><span class="line">ADA LOVELACE</span><br></pre></td></tr></table></figure>
-<p>c.使用.lower()修改所有字符小写<br>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ADA LOVELACE&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br><span class="line">输出：</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
-<h2 id="在字符串中使用变量"><a href="#在字符串中使用变量" class="headerlink" title="在字符串中使用变量"></a>在字符串中使用变量</h2><h3 id="f字符串："><a href="#f字符串：" class="headerlink" title="f字符串："></a>f字符串：</h3><blockquote>
-<p>要在字符串中插入变量的值，可爱前引号前加上字母f，在将要插入的变量放在花括号内<br>示例：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = f<span class="string">&quot;&#123;first_name&#125; &#123;last_name&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br><span class="line">输出：</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
-<p>进阶示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span></span><br><span class="line">full_name = f<span class="string">&quot;&#123;first_name&#125; &#123;last_name&#125;&quot;</span></span><br><span class="line">message = f<span class="string">&quot;Hello,&#123;full_name.title()&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(message)</span><br><span class="line">输出：</span><br><span class="line">Hello,Ada Lovelace</span><br></pre></td></tr></table></figure>
-<h2 id="使用制表符或换行符来添加空白"><a href="#使用制表符或换行符来添加空白" class="headerlink" title="使用制表符或换行符来添加空白"></a>使用制表符或换行符来添加空白</h2><blockquote>
-<p>在编程中，空白泛指任何非打印字符，如空格、制表符和换行符<br>a.在字符串中添加制表符，可以使用字符组合\t<br>示例：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Python&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\tPython&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">Python</span><br><span class="line">	Python</span><br></pre></td></tr></table></figure>
-<p>b.在字符串中添加换行符，可以使用字符组合\n<br>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Languages:\nPython\nC\nJavaScript&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">Languages:</span><br><span class="line">Python</span><br><span class="line">C</span><br><span class="line">JavaScript</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+          <a class="article-more-a" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#more">more >></a>
+        
       
 
       
