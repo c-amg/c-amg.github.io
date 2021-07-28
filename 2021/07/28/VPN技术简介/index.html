@@ -16,8 +16,11 @@
 <meta property="og:description" content="什么是VPN？&amp;ensp;&amp;ensp;VPN是指在公用网络上建立一个私有的、专用的虚拟通信网络。在企业网络中VPN广泛应用于分支机构和出差员工连接公司总部网络。  按照VPN技术实现的网络层次进行分类：a.基于数据链路层的VPN：L2TP、L2F、PPTP。其中L2F和PPTP已经基本上被L2TP替代了，强叔不再关注这两种技术了。b.基于网络层的VPN：GRE、IPSec。c.基于应用层的VPN：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859eff9a5c4.4bxcm64ix9s0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859f1927bfa.5l8i6nicjow0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859f2d55772.1ld041lco0m8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859f42be16a.1s9x4h9meqsg.png">
 <meta property="article:published_time" content="2021-07-28T03:52:45.000Z">
-<meta property="article:modified_time" content="2021-07-28T03:58:01.811Z">
+<meta property="article:modified_time" content="2021-07-28T06:29:05.881Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="vpn">
 <meta name="twitter:card" content="summary">
@@ -183,7 +186,10 @@
 </blockquote>
 <h2 id="VPN用到的关键技术点"><a href="#VPN用到的关键技术点" class="headerlink" title="VPN用到的关键技术点"></a>VPN用到的关键技术点</h2><p>1、隧道技术<br>&ensp;&ensp;隧道技术是vpn的基本技术，类似于点到点连接技术。它的基本过程就是在数据进入源VPN网关后，将数据“封装”后通过公网传输到目的VPN网关后再对数据“解封装”。“封装/解封装”过程本身就可以为原始报文提供安全防护功能，所以被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
 <span id="more"></span>
-<p><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859eff9a5c4.4bxcm64ix9s0.png" alt="53859eff9a5c4"></p>
+<p><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859eff9a5c4.4bxcm64ix9s0.png" alt="53859eff9a5c4"><br>2、身份认证技术<br>&ensp;&ensp;主要用于移动办公的用户远程接入的情况。通过对用户的身份进行认证，确保接入内部网络的用户是合法用户，而非恶意用户。</p>
+<blockquote>
+<p>不同的VPN技术能提供的用户身份认证方法不同：<br>a.GRE不支持身份认证技术。<br>b.L2TP：依赖PPP提供的认证（比如CHAP、PAP、EAP）。接入用户的用户名和密码本地认证也可以通过RADIUS服务器认证。认证通过以后再给用户分配内部的IP地址，通过此IP地址对用户进行授权和管理。<br>c.IPSec：通过IKEv2拨号时，支持进行EAP认证。接入用户的用户名和密码可以本地认证可以通过RADIUS服务器认证。认证通过以后再给用户分配内部的IP地址，通过此IP地址对用户进行授权和管理。另外IPSec还支持数据源认证，在下面的数据验证技术里进行说明。<br>d.SSL VPN：支持本地认证、证书认证和服务器认证。主要是对服务器进行身份认证，确认Web网页的合法性。<br>3、加密技术<br>&ensp;&ensp;加密技术就是把能读懂的报文变成无法读懂的报文，也就是把明文变成密文，这样即便是有黑客获取了报文也无法知道其真实含义。加密对象有数据报文和协议报文之分，能够实现协议报文和数据报文都加密的协议安全系数更高。<br>a.GRE和L2TP协议本身不提供加密技术，所以通常结合IPSec协议一起使用，使用IPSec的加密技术。<br>b.IPSec：支持数据报文和协议报文加密。IPSec一般采用对称密钥算法加密数据。对称加密算法采用相同的密钥加密和解密数据。<br><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859f1927bfa.5l8i6nicjow0.png" alt="53859f1927bfa"><br>c.SSL VPN：支持数据报文和协议报文加密。SSL VPN采用公钥体制进行加密。公钥体制加密跟对称密钥加密的差别在于加密和解密的所用的密钥是不同的密钥。采用公钥进行加密，私钥进行解密。公钥和私钥一一对应。<br>4、数据验证技术<br>&ensp;&ensp;数据验证技术就是对收到的报文进行验货。对于伪造的、被篡改的数据进行丢弃。那么验证是如何实现的呢？它采用一种称为“摘要”的技术。“摘要”技术主要采用HASH函数将一段长的报文通过函数变换，映射为一段短的报文。在收发两端都对报文进行验证，只有摘要一致的报文才被认可。<br>a.GRE：本身只提供简单的校验和验证和关键字验证，但可结合IPSec协议一起使用，使用IPSec的数据验证技术。<br>b.L2TP：本身不提供数据验证技术，但可结合IPSec协议一起使用，使用IPSec的数据验证技术。<br>d.IPSec：支持对数据进行完整性验证和数据源验证。在IPSec中验证和加密通常一起使用，对加密后的报文HMAC（Keyed-Hash Message Authentication Code）生成摘要，提供数据的安全性。HMAC利用Hash函数，以一个对称密钥和一个数据包作为输入，生成一个固定长度的输出，这个输出被称为完整性校验值ICV（Integrity Check Value）。由于在Hash运算时包含了密钥，即使用户同时修改了数据和摘要也可以被识别出来。<br><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859f2d55772.1ld041lco0m8.png" alt="53859f2d55772"><br>e.SSL VPN：支持对数据进行完整性验证和数据源验证。SSL VPN采用公钥体制，利用Hash算法生成摘要，再用私钥加密摘要生成数字签名。利用公钥进行解密。利用公钥和私钥的一一的关系可以对数据源进行认证。<br><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/53859f42be16a.1s9x4h9meqsg.png" alt="53859f42be16a"></p>
+</blockquote>
 
       
 
