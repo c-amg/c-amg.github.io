@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | Hexo</title>
+  <title>端口镜像原理与配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="什么是镜像？镜像是指将经过指定端口（镜像端口）或者指定vlan（镜像vlan）的报文复制一份到另一个指定端口（观察端口），然后转发到网络监控设备，供网络管理员进行网络监控与故障管理。 功能：1.故障定位2.业务可视3.入侵检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="端口镜像原理与配置">
+<meta property="og:url" content="http://example.com/2021/08/10/%E7%AB%AF%E5%8F%A3%E9%95%9C%E5%83%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是镜像？镜像是指将经过指定端口（镜像端口）或者指定vlan（镜像vlan）的报文复制一份到另一个指定端口（观察端口），然后转发到网络监控设备，供网络管理员进行网络监控与故障管理。 功能：1.故障定位2.业务可视3.入侵检测">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-10T15:29:40.000Z">
+<meta property="article:modified_time" content="2021-08-10T15:39:55.133Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="华为">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,36 +155,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-端口镜像原理与配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/10/%E7%AB%AF%E5%8F%A3%E9%95%9C%E5%83%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2021-08-10T15:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/10/%E7%AB%AF%E5%8F%A3%E9%95%9C%E5%83%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E9%85%8D%E7%BD%AE/">端口镜像原理与配置</a>
+    <h1 class="article-title" itemprop="name">
+      端口镜像原理与配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/08/10/%E7%AB%AF%E5%8F%A3%E9%95%9C%E5%83%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2021-08-10T15:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是镜像？"><a href="#什么是镜像？" class="headerlink" title="什么是镜像？"></a>什么是镜像？</h2><p>镜像是指将经过指定端口（镜像端口）或者指定vlan（镜像vlan）的报文复制一份到另一个指定端口（观察端口），然后转发到网络监控设备，供网络管理员进行网络监控与故障管理。</p>
+<h2 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h2><p>1.故障定位<br>2.业务可视<br>3.入侵检测</p>
+<span id="more"></span>
+<h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><p><a target="_blank" rel="noopener" href="https://static01.imgkr.com/temp/f0ee7c363fc7465787eac47d38161605.png">https://static01.imgkr.com/temp/f0ee7c363fc7465787eac47d38161605.png</a></p>
+<blockquote>
+<p>SwitchA配置</p>
+</blockquote>
+<p><Huawei>system-view<br>[Huawei]sysname SwitchA<br>[SwitchA]vlan batch 10 20 //vlan10为用户Vlan，Vlan20用于转发镜像报文<br>[SwitchA]observe-port 1 interface GigabitEthernet 0/0/3 vlan 20  //配置GE0/0/3口为二层远程观察端口，<br>用的观察端口索引为1，远程镜像VLAN为VLAN20，复制的报文会通过GE0/0/1向VLAN20转发<br>[SwitchA]interface GigabitEthernet 0/0/2<br>[SwitchA-GigabitEthernet0/0/2]port link-type access<br>[SwitchA-GigabitEthernet0/0/2]port default vlan 10<br>[SwitchA-GigabitEthernet0/0/2]port-mirroring to observe-port 1 inbound     //将GE0/0/2入方向的报文镜像到<br>观察端口索引为1<br>[SwitchA]display observe-port </p>
+<hr>
+<p>  Index    : 1<br>  Interface: GigabitEthernet0/0/3<br>  Used     : 1<br>  Vlan     : 20</p>
+<hr>
+<p>[SwitchA]dis port-mirroring<br>  Port-mirror:</p>
+<hr>
+<h2 id="Mirror-port-Direction-Observe-port"><a href="#Mirror-port-Direction-Observe-port" class="headerlink" title="  Mirror-port              Direction     Observe-port             "></a>  Mirror-port              Direction     Observe-port             </h2><h2 id="GigabitEthernet0-0-2-Inbound-GigabitEthernet0-0-3"><a href="#GigabitEthernet0-0-2-Inbound-GigabitEthernet0-0-3" class="headerlink" title="  GigabitEthernet0/0/2     Inbound       GigabitEthernet0/0/3     "></a>  GigabitEthernet0/0/2     Inbound       GigabitEthernet0/0/3     </h2><p>[SwitchA]interface GigabitEthernet 0/0/1<br>[SwitchA-GigabitEthernet0/0/1]port link-type access<br>[SwitchA-GigabitEthernet0/0/1]port default vlan 10</p>
+<blockquote>
+<p>SwitchB配置<br><Huawei>system-view<br>[Huawei]sysname SwitchB<br>[SwitchB]vlan batch 20<br>[SwitchB]interface GigabitEthernet 0/0/1<br>[SwitchB-GigabitEthernet0/0/1]port link-type trunk<br>[SwitchB-GigabitEthernet0/0/1]port trunk allow-pass vlan 20<br>[SwitchB]interface GigabitEthernet 0/0/2<br>[SwitchB-GigabitEthernet0/0/2]port link-type access<br>[SwitchB-GigabitEthernet0/0/2]port default vlan 20</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,364 +232,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/10/%E7%AB%AF%E5%8F%A3%E9%95%9C%E5%83%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/08/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%88%97%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2021-08-08T13:56:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/08/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%88%97%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python学习笔记-列表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/08/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%88%97%E8%A1%A8/">python学习笔记-列表</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/28/GRE%E9%9A%A7%E9%81%93%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-07-28T07:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/28/GRE%E9%9A%A7%E9%81%93%E5%8E%9F%E7%90%86/">GRE隧道原理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  	<time datetime="2021-07-28T03:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/">VPN技术简介</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/" class="archive-article-date">
-  	<time datetime="2021-07-26T15:56:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/">云服务器安装MikrotikROS路由</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mikrotik</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/24/linux-dd%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-07-24T15:14:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/24/linux-dd%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">linux-dd命令详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">linux命令</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-07-24T00:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">python学习笔记-变量和简单数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2021-07-21T10:12:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/">TCP并发连接数与请求数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tcp并发连接数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-07-20T02:28:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/">OSI七层参考模型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">OSI模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/19/linux-ftp%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="archive-article-date">
-  	<time datetime="2021-07-19T13:34:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/19/linux-ftp%E5%AE%A2%E6%88%B7%E7%AB%AF/">linux-ftp客户端</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ftp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="page-number" href="/archives/2021/page/3/">3</a><a class="extend next" rel="next" href="/archives/2021/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -572,8 +354,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
