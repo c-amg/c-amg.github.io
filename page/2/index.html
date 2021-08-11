@@ -152,6 +152,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos-BBR加速配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/">Centos-BBR加速配置</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2021-07-15T13:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><pre><code>BBR（Bottleneck Bandwidth and RTT）是谷歌贡献给Linux内核TCP栈的一种新的拥塞控制算法。有了 BBR，Linux 服务器可以显着增加吞吐量并减少连接延迟。此外，部署 BBR 很容易，因为该算法只需要发送方的更新，而不需要网络或接收方的更新。
+</code></pre>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><blockquote>
+<p>为了使用 BBR，您需要将 CentOS 7 机器的内核升级到 4.9.0。<br>1、检查内核版本，请使用以下命令</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<p>2、安装ELRepo仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bbr</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MTR工具使用说明与结果分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -856,84 +939,6 @@
 
 
   
-    <article id="post-hexo博客迁移" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/15/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">hexo博客迁移</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/15/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/" class="archive-article-date">
-  	<time datetime="2021-06-15T09:58:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo属于静态博客，不像Wordpress等有后台系统，可以在任意平台直接使用。而Hexo没有后台的统一管理，在换了系统或者换了电脑等情况，都需要重新安装一下Hexo。如果手动复制容易产生错误。因此记录一下迁移方式。</span><br></pre></td></tr></table></figure>
-<h1 id="需要备份的文件或目录"><a href="#需要备份的文件或目录" class="headerlink" title="需要备份的文件或目录"></a>需要备份的文件或目录</h1><p> source文件夹：此文件夹包含新建的页面与博文<br> themes文件夹：文件夹下的主题<br> _config.yml：配置文件</p>
-<p>#新电脑上确认已经安装Git,node,nps</p>
-        
-          <a class="article-more-a" href="/2021/06/15/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/15/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1092,6 +1097,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vpn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">华为</a>
               </li>
             
             <div class="clearfix"></div>
