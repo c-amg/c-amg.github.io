@@ -152,6 +152,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python学习笔记-if语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/14/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-if%E8%AF%AD%E5%8F%A5/">python学习笔记-if语句</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/14/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-if%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
+  	<time datetime="2021-08-14T14:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>if语句让你能能够检查程序的当前状态，并采取相应的措施</p>
+</blockquote>
+<h2 id="条件测试"><a href="#条件测试" class="headerlink" title="条件测试"></a>条件测试</h2><blockquote>
+<p>每条if语句的核心都是一个值为true或false的表达式，这种表达式称为条件测试。根据条件测试的值为True还是False来决定是否执行if语句中的代码。条件测试值为true则执行，为false就忽略这些代码。</p>
+</blockquote>
+<h2 id="检查条件"><a href="#检查条件" class="headerlink" title="检查条件"></a>检查条件</h2><p>1.要判断两个值是否不等，可结合使用惊叹号和等号（！=）<br>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">requested_topping = <span class="string">&#x27;mushrooms&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> requested_topping != <span class="string">&#x27;anchovies&#x27;</span>:     //返回值为true</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hold the anchovies!&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">hold the anchovies!</span><br></pre></td></tr></table></figure>
+<p>2.使用and检查多个条件</p>
+<blockquote>
+<p>检查是否两个条件都为true，可使用关键字and将两个条件测试合二为一。如果每个测试都通过了，整个表达式就为true；如果有一个测试没有通过，整个表达式就为false；</p>
+</blockquote>
+<p>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age_0 = <span class="number">22</span></span><br><span class="line">age_1 = <span class="number">18</span></span><br><span class="line">age_0 &gt;= <span class="number">21</span> <span class="keyword">and</span> age_1 &gt;= <span class="number">21</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line">age_1 = <span class="number">22</span></span><br><span class="line">age_0 &gt;= <span class="number">21</span> <span class="keyword">and</span> age_1 &gt;= <span class="number">21</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>3.使用or检查多个条件</p>
+<blockquote>
+<p>检查多个条件时，只要至少一个条件满足，就能通过整个测试。仅当两个测试都没有通过时，使用or都表达式才为false；</p>
+</blockquote>
+<p>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age_0 = <span class="number">22</span></span><br><span class="line">age_1 = <span class="number">18</span></span><br><span class="line">age_0 &gt;= <span class="number">21</span> <span class="keyword">or</span> age_1 &gt;= <span class="number">21</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line">age_0 = <span class="number">18</span></span><br><span class="line">age_0 &gt;= <span class="number">21</span> <span class="keyword">or</span> age_1 &gt;= <span class="number">21</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>4.检查特定值是否包含或不包含在列表中</p>
+<blockquote>
+<p>判断特定都值是否已包含在列表中，可使用关键字in，反之使用not in即可</p>
+</blockquote>
+<p>代码示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [<span class="string">&#x27;mushrooms&#x27;</span>,<span class="string">&#x27;onions&#x27;</span>,<span class="string">&#x27;pineapple&#x27;</span>]</span><br><span class="line"><span class="string">&#x27;mushrooms&#x27;</span> <span class="keyword">in</span> requested_toppings</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="string">&#x27;pepperoni&#x27;</span> <span class="keyword">in</span> requested_toppings</span><br><span class="line"><span class="literal">False</span></span><br><span class="line">-------------------------------------------------------</span><br><span class="line">banned_users = [<span class="string">&#x27;andrew&#x27;</span>,<span class="string">&#x27;carolina&#x27;</span>,<span class="string">&#x27;david&#x27;</span>]</span><br><span class="line">user = <span class="string">&#x27;marie&#x27;</span></span><br><span class="line"><span class="keyword">if</span> user <span class="keyword">not</span> <span class="keyword">in</span> banned_users:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;user.title()&#125;</span>,you can post a response if you wish.&quot;</span>)</span><br><span class="line">Marie,you can post a response <span class="keyword">if</span> you wish.</span><br></pre></td></tr></table></figure>
+<p>5.布尔表达式</p>
+<blockquote>
+<p>布尔表达式都结果要么为true，要么为false。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/14/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-if%E8%AF%AD%E5%8F%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python学习笔记-操作列表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -840,85 +943,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-OSI七层参考模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/">OSI七层参考模型</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-07-20T02:28:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="OSI七层参考模型结构图"><a href="#OSI七层参考模型结构图" class="headerlink" title="OSI七层参考模型结构图"></a>OSI七层参考模型结构图</h2><p><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/1.5nu8qqtakns0.png" alt="1"></p>
-<blockquote>
-<p>OSI模型是有7层组成，从上往下分别是：应用层、表述层、会话层、传输层、网络层、数据链路层、物理层</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">OSI模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/">展开全文 >></a>
         </p>
       
 
