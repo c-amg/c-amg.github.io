@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux-smartDNS入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/">smartDNS入门</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2021-06-30T14:19:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是smartDNS"><a href="#什么是smartDNS" class="headerlink" title="什么是smartDNS?"></a>什么是smartDNS?</h2><p>SmartDNS是一个运行在本地的DNS服务器，SmartDNS接受本地客户端的DNS查询请求，从多个上游DNS服务器获取DNS查询结果，并将访问速度最快的结果返回给客户端，提高网络访问速度。 同时支持指定特定域名IP地址，并高性匹配，达到过滤广告的效果。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/architecture.6dcinikzwfo0.png" alt="architecture"><br>1.SmartDNS接收本地网络设备的DNS查询请求，如PC，手机的查询请求。<br>2.SmartDNS将查询请求发送到多个上游DNS服务器，可采用标准UDP查询，非标准端口UDP查询，及TCP查询。<br>3.上游DNS服务器返回域名对应的Server IP地址列表。SmartDNS检测与本地网络访问速度最快的Server IP。<br>4.将访问速度最快的Server IP返回给本地客户端。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="1-多DNS上游服务器"><a href="#1-多DNS上游服务器" class="headerlink" title="1.多DNS上游服务器"></a>1.多DNS上游服务器</h3><p>支持配置多个上游DNS服务器，并同时进行查询，即使其中有DNS服务器异常，也不会影响查询。</p>
+<h3 id="2-返回最快IP地址"><a href="#2-返回最快IP地址" class="headerlink" title="2.返回最快IP地址"></a>2.返回最快IP地址</h3><p>支持从域名所属IP地址列表中查找到访问速度最快的IP地址，并返回给客户端，提高网络访问速度。</p>
+<h3 id="3-支持多种查询协议"><a href="#3-支持多种查询协议" class="headerlink" title="3.支持多种查询协议"></a>3.支持多种查询协议</h3><p>支持UDP，TCP，TLS, HTTPS查询，以及非53端口查询。</p>
+        
+          <a class="article-more-a" href="/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">smartDNS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/30/linux-smartDNS%E5%85%A5%E9%97%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-dns原理入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
