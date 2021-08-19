@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>docker数据管理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+  <meta name="description" content="简介容器中管理数据主要有两种方式：数据卷：容器内数据直接映射到本地主机环境数据卷容器：使用特定容器维护数据卷 数据卷 数据卷是一个可供容器使用到特殊目录，它将主机操作系统目录直接映射进容器，类似于Linux中到mount行为  1.使用volume命令创建数据卷语法： 12345678910Usage:  docker volume COMMANDManage volumesCommands:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker数据管理">
+<meta property="og:url" content="http://example.com/2021/08/19/docker%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介容器中管理数据主要有两种方式：数据卷：容器内数据直接映射到本地主机环境数据卷容器：使用特定容器维护数据卷 数据卷 数据卷是一个可供容器使用到特殊目录，它将主机操作系统目录直接映射进容器，类似于Linux中到mount行为  1.使用volume命令创建数据卷语法： 12345678910Usage:  docker volume COMMANDManage volumesCommands:">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-19T11:28:17.000Z">
+<meta property="article:modified_time" content="2021-08-19T11:33:57.702Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,273 +155,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-云服务器安装MikrotikROS路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-docker数据管理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/">云服务器安装MikrotikROS路由</a>
+    <h1 class="article-title" itemprop="name">
+      docker数据管理
     </h1>
   
 
         
-        <a href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/" class="archive-article-date">
-  	<time datetime="2021-07-26T15:56:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-26</time>
+        <a href="/2021/08/19/docker%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2021-08-19T11:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装wget命令"><a href="#安装wget命令" class="headerlink" title="安装wget命令"></a>安装wget命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install wget -y</span><br></pre></td></tr></table></figure>
-<h2 id="下载镜像，解压"><a href="#下载镜像，解压" class="headerlink" title="下载镜像，解压"></a>下载镜像，解压</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.mikrotik.com/routeros/6.45.8/chr-6.45.8.img.zip -O chr.img.zip</span><br><span class="line">gunzip -c chr.img.zip &gt; chr.img</span><br></pre></td></tr></table></figure>
-<h2 id="查询镜像start值"><a href="#查询镜像start值" class="headerlink" title="查询镜像start值"></a>查询镜像start值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -lu chr.img</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mikrotik</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux-dd命令详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/24/linux-dd%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">linux-dd命令详解</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/24/linux-dd%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-07-24T15:14:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="dd命令："><a href="#dd命令：" class="headerlink" title="dd命令："></a>dd命令：</h2><p>Linux dd 命令用于读取、转换并输出数据。<br>dd 可从标准输入或文件中读取数据，根据指定的格式来转换数据，再输出到文件、设备或标准输出。</p>
-<h2 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h2><p>if=文件名：输入文件名，默认为标准输入。即指定源文件。<br>of=文件名：输出文件名，默认为标准输出。即指定目的文件。<br>ibs=bytes：一次读入bytes个字节，即指定一个块大小为bytes个字节。<br>obs=bytes：一次输出bytes个字节，即指定一个块大小为bytes个字节。<br>bs=bytes：同时设置读入/输出的块大小为bytes个字节。<br>cbs=bytes：一次转换bytes个字节，即指定转换缓冲区大小。<br>skip=blocks：从输入文件开头跳过blocks个块后再开始复制。<br>seek=blocks：从输出文件开头跳过blocks个块后再开始复制。<br>count=blocks：仅拷贝blocks个块，块大小等于ibs指定的字节数。</p>
-        
-          <a class="article-more-a" href="/2021/07/24/linux-dd%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">linux命令</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/24/linux-dd%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python学习笔记-变量和简单数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">python学习笔记-变量和简单数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-07-24T00:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量与常量"><a href="#变量与常量" class="headerlink" title="变量与常量"></a>变量与常量</h2><pre><code>变量（Variable）可以看成一个小箱子，专门用来“盛装”程序中的数据。每个变量都拥有独一无二的名字，通过变量的名字就能找到变量中的数据。
-</code></pre>
-<blockquote>
-<p>从底层看，程序中的数据最终都要放到内存（内存条）中，变量其实就是这块内存的名字<br>    和变量相对应的是常量（Constant），它们都是用来“盛装”数据的小箱子，不同的是：变量保存的数据可以被多次修改，而常量一旦保存某个数据之后就不能修改了。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>容器中管理数据主要有两种方式：<br>数据卷：容器内数据直接映射到本地主机环境<br>数据卷容器：使用特定容器维护数据卷</p>
+<h3 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h3><blockquote>
+<p>数据卷是一个可供容器使用到特殊目录，它将主机操作系统目录直接映射进容器，类似于Linux中到mount行为</p>
 </blockquote>
-<h2 id="变量的命名与使用"><a href="#变量的命名与使用" class="headerlink" title="变量的命名与使用"></a>变量的命名与使用</h2><p>1.变量名只能包含字母、数字和下划线<br>2.变量名不能包含空格<br>3.不能将python的关键字和函数名用作变量名<br>4.慎用小写字母l和大写字母o</p>
-        
-          <a class="article-more-a" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">python学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/24/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E9%87%8F%E5%92%8C%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-TCP并发连接数与请求数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/">TCP并发连接数与请求数</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2021-07-21T10:12:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="并发连接数-SBC-Simultaneous-Browser-Connections"><a href="#并发连接数-SBC-Simultaneous-Browser-Connections" class="headerlink" title="并发连接数-SBC(Simultaneous Browser Connections)"></a>并发连接数-SBC(Simultaneous Browser Connections)</h2><p>并发连接数：是指客户端向服务端发起请求，并建立了TCP连接。每秒钟服务器连接的总TCP数量，就是并发连接数</p>
-<h2 id="请求数-QPS（Query-Per-Second-Rps-Request-Per-Second"><a href="#请求数-QPS（Query-Per-Second-Rps-Request-Per-Second" class="headerlink" title="请求数-QPS（Query Per Second)/Rps(Request Per Second)"></a>请求数-QPS（Query Per Second)/Rps(Request Per Second)</h2><p>请求数有2个缩写，可以叫QPS也可以叫RPS。单位是每秒多少请求。Query=查询，也相当于请求。</p>
-<p>请求数：<br>    是指客户端在建立完连接后，向http服务发出Get/POST/HEAD数据包，服务器返回了请求后有两种情况：</p>
-<blockquote>
-<p>http数据包头包含Close字样，关闭本次TCP连接<br>http数据包头包含Keep-Alive字样，本次连接不关闭，可继续通过该连接继续向http服务发送请求，用于减少TCP并发连接数。</p>
+<p>1.使用volume命令创建数据卷<br>语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Usage:  docker volume COMMAND</span><br><span class="line"></span><br><span class="line">Manage volumes</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  create      Create a volume</span><br><span class="line">  inspect     Display detailed information on one or more volumes</span><br><span class="line">  ls          List volumes</span><br><span class="line">  prune       Remove all unused <span class="built_in">local</span> volumes</span><br><span class="line">  rm          Remove one or more volumes</span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker volume create -d local test</span></span><br><span class="line"><span class="built_in">test</span></span><br><span class="line">[root@centos7 ~]<span class="comment"># ls -l /var/lib/docker/volumes/</span></span><br><span class="line">total 28</span><br><span class="line">brw------- 1 root root 253, 1 Aug 15 23:01 backingFsBlockDev</span><br><span class="line">-rw------- 1 root root  32768 Aug 19 15:51 metadata.db</span><br><span class="line">drwx-----x 3 root root   4096 Aug 19 15:51 <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>2.绑定数据卷<br>在使用docker [container] run命令时，可以使用-mount选项来使用数据卷<br>-mount选项支持3种类型的数据卷<br>1）volume:普通数据卷，映射到主机/var/lib/docker/volumes路径下<br>2）bind：绑定数据卷，映射到主机指定路径下<br>3）tmpfs：临时数据卷，只存在于内存中<br>实例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker run -d -P --name web -v /src/webapp:/opt/webapp training/webapp python app.py</span></span><br><span class="line">Unable to find image <span class="string">&#x27;training/webapp:latest&#x27;</span> locally</span><br><span class="line">latest: Pulling from training/webapp</span><br><span class="line">Image docker.io/training/webapp:latest uses outdated schema1 manifest format. Please upgrade to a schema2 image <span class="keyword">for</span> better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/</span><br><span class="line">e190868d63f8: Pull complete </span><br><span class="line">909cd34c6fd7: Pull complete </span><br><span class="line">0b9bfabab7c1: Pull complete </span><br><span class="line">a3ed95caeb02: Pull complete </span><br><span class="line">10bbbc0fc0ff: Pull complete </span><br><span class="line">fca59b508e9f: Pull complete </span><br><span class="line">e7ae2541b15b: Pull complete </span><br><span class="line">9dd97ef58ce9: Pull complete </span><br><span class="line">a4c1b0cb7af7: Pull complete </span><br><span class="line">Digest: sha256:06e9c1983bd6d5db5fba376ccd63bfa529e8d02f23d5079b8f74a616308fb11d</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> training/webapp:latest</span><br><span class="line">392e8e357fac89c329e4920eb24b2d780b303942d085087285f7f6bc01a957e0</span><br></pre></td></tr></table></figure>
+<p>*上面的命令加载主机的 /src/webapp 目录到容器的 /opt/webapp 目录。这个功能在进行测试的时候十分方便，比如用户可以放置一些程序到本地目录中，来查看容器是否正常工作。本地目录的路径必须是绝对路径，如果目录不存在 Docker 会自动为你创建它。<br>3.查看数据卷具体信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker inspect web</span></span><br><span class="line"><span class="string">&quot;Mounts&quot;</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;Type&quot;</span>: <span class="string">&quot;bind&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Source&quot;</span>: <span class="string">&quot;/src/webapp&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Destination&quot;</span>: <span class="string">&quot;/opt/webapp&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Mode&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;RW&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">&quot;Propagation&quot;</span>: <span class="string">&quot;rprivate&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
+<h3 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h3><blockquote>
+<p>如果你有一些持续更新的数据需要在容器之间共享，最好创建数据卷容器。数据卷容器，其实就是一个正常的容器，专门用来提供数据卷供其它容器挂载的</p>
 </blockquote>
+<p>首先，创建一个名为 dbdata 的数据卷容器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker run -d -v /dbdata --name dbdata ubuntu</span></span><br></pre></td></tr></table></figure>
+<p>然后，可以在其他容器中使用—volumes-from 来挂载dbdata容器中的数据卷</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker run -d --volumes-from dbdata --name db1 ubuntu</span></span><br><span class="line">[root@centos7 ~]<span class="comment"># docker run -d --volumes-from dbdata --name db2 ubuntu</span></span><br></pre></td></tr></table></figure>
+<p>此时，容器db1和db2都挂载同一个数据卷到相同到/dbdata目录，三个容器任何一方在该目录下到写入，其他容器都可以看到</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>有些时候不希望将数据保存在宿主机或容器中，还可以使用tmpfs类型都数据卷，其中数据只存在内存中，容器退出后自动删除</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -427,7 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tcp并发连接数</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
@@ -436,16 +239,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/21/TCP%E5%B9%B6%E5%8F%91%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%8E%E8%AF%B7%E6%B1%82%E6%95%B0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/19/docker%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/18/%E6%93%8D%E4%BD%9Cdocker%E5%AE%B9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作docker容器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -465,481 +327,14 @@
 
 
 
-
-  
-    <article id="post-OSI七层参考模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/">OSI七层参考模型</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-07-20T02:28:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="OSI七层参考模型结构图"><a href="#OSI七层参考模型结构图" class="headerlink" title="OSI七层参考模型结构图"></a>OSI七层参考模型结构图</h2><p><img src="https://raw.githubusercontent.com/c-amg/image-hexo/master/images/1.5nu8qqtakns0.png" alt="1"></p>
-<blockquote>
-<p>OSI模型是有7层组成，从上往下分别是：应用层、表述层、会话层、传输层、网络层、数据链路层、物理层</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">OSI模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/20/OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux-ftp客户端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/19/linux-ftp%E5%AE%A2%E6%88%B7%E7%AB%AF/">linux-ftp客户端</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/19/linux-ftp%E5%AE%A2%E6%88%B7%E7%AB%AF/" class="archive-article-date">
-  	<time datetime="2021-07-19T13:34:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装ftp"><a href="#安装ftp" class="headerlink" title="安装ftp"></a>安装ftp</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS-7 ~]<span class="comment"># yum install ftp -y</span></span><br></pre></td></tr></table></figure>
-<h2 id="ftp登入"><a href="#ftp登入" class="headerlink" title="ftp登入"></a>ftp登入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS-7 ~]<span class="comment"># ftp 192.168.0.2</span></span><br><span class="line">Connected to 192.168.0.2 (192.168.0.2).</span><br><span class="line">220 (vsFTPd 3.0.2)</span><br><span class="line">// 输入用户名</span><br><span class="line">Name (192.168.0.2:root): ftpadmin</span><br><span class="line">331 Please specify the password.</span><br><span class="line">//输入密码</span><br><span class="line">Password:</span><br><span class="line">230 Login successful.</span><br><span class="line">Remote system <span class="built_in">type</span> is UNIX.</span><br><span class="line">Using binary mode to transfer files.</span><br><span class="line">//使用命令即可</span><br><span class="line">ftp&gt;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/07/19/linux-ftp%E5%AE%A2%E6%88%B7%E7%AB%AF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ftp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/19/linux-ftp%E5%AE%A2%E6%88%B7%E7%AB%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos-BBR加速配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/">Centos-BBR加速配置</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2021-07-15T13:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><pre><code>BBR（Bottleneck Bandwidth and RTT）是谷歌贡献给Linux内核TCP栈的一种新的拥塞控制算法。有了 BBR，Linux 服务器可以显着增加吞吐量并减少连接延迟。此外，部署 BBR 很容易，因为该算法只需要发送方的更新，而不需要网络或接收方的更新。
-</code></pre>
-<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><blockquote>
-<p>为了使用 BBR，您需要将 CentOS 7 机器的内核升级到 4.9.0。<br>1、检查内核版本，请使用以下命令</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
-<p>2、安装ELRepo仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bbr</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/15/Centos-BBR%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MTR工具使用说明与结果分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/08/MTR%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B8%8E%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/">MTR工具使用说明与结果分析</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/08/MTR%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B8%8E%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2021-07-08T14:18:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MTR是什么？"><a href="#MTR是什么？" class="headerlink" title="MTR是什么？"></a>MTR是什么？</h2><p>Mtr是一个将“traceroute”和“ping”程序功能结合在一起的一个网络诊断工具。<br>运行Mtr指定一个IP地址，Mtr会查看运行Mtr的主机和指定目标主机之间的网络节点。在确定目标主机和本地主机间每个网络节点的IP地址后，它向每个网络节点发送一个ICMP ECHO请求，以确定到每个节点的链路的质量。就像这样它会打印到每个节点的运行统计信息。</p>
-<h2 id="在linux系统上安装"><a href="#在linux系统上安装" class="headerlink" title="在linux系统上安装"></a>在linux系统上安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mtr -y</span><br></pre></td></tr></table></figure>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2>
-        
-          <a class="article-more-a" href="/2021/07/08/MTR%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B8%8E%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mtr</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/08/MTR%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B8%8E%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-正向代理与反向代理的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/07/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB/">正向代理与反向代理的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/07/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2021-07-07T13:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正向代理：<br>    是一个位于客户端和目标服务器之间的服务器(代理服务器)，为了从目标服务器取得内容，客户端向代理服务器发送一个请求并指定目标，然后代理服务器向目标服务器转交请求并将获得的内容返回给客户器。</p>
-        
-          <a class="article-more-a" href="/2021/07/07/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">proxy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/07/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nginx配置文件详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/06/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/">nginx配置文件详解</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/06/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2021-07-06T15:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="配置文件组成部分："><a href="#配置文件组成部分：" class="headerlink" title="配置文件组成部分："></a>配置文件组成部分：</h2><p>1、main（全局配置）<br>    从配置文件开始到 events 块之间的内容，主要会设置一些影响nginx 服务器整体运行的配置指令，主要包括配置运行 Nginx 服务器的用户（组）、允许生成的 worker process 数，进程 PID 存放路径、日志存放路径和类型以及配置文件的引入等。<br>2、events块<br>    主要影响 Nginx 服务器与用户的网络连接，常用的设置包括是否开启对多 work process 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 word process 可以同时支持的最大连接数等。<br>3、http块<br>    包括文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等<br>4、server块<br>    每个 server 块就相当于一个虚拟主机。</p>
-        
-          <a class="article-more-a" href="/2021/07/06/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/06/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -962,8 +357,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

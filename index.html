@@ -152,6 +152,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-docker数据管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/docker%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/">docker数据管理</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/19/docker%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2021-08-19T11:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>容器中管理数据主要有两种方式：<br>数据卷：容器内数据直接映射到本地主机环境<br>数据卷容器：使用特定容器维护数据卷</p>
+<h3 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h3><blockquote>
+<p>数据卷是一个可供容器使用到特殊目录，它将主机操作系统目录直接映射进容器，类似于Linux中到mount行为</p>
+</blockquote>
+<p>1.使用volume命令创建数据卷<br>语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Usage:  docker volume COMMAND</span><br><span class="line"></span><br><span class="line">Manage volumes</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  create      Create a volume</span><br><span class="line">  inspect     Display detailed information on one or more volumes</span><br><span class="line">  ls          List volumes</span><br><span class="line">  prune       Remove all unused <span class="built_in">local</span> volumes</span><br><span class="line">  rm          Remove one or more volumes</span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker volume create -d local test</span></span><br><span class="line"><span class="built_in">test</span></span><br><span class="line">[root@centos7 ~]<span class="comment"># ls -l /var/lib/docker/volumes/</span></span><br><span class="line">total 28</span><br><span class="line">brw------- 1 root root 253, 1 Aug 15 23:01 backingFsBlockDev</span><br><span class="line">-rw------- 1 root root  32768 Aug 19 15:51 metadata.db</span><br><span class="line">drwx-----x 3 root root   4096 Aug 19 15:51 <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>2.绑定数据卷<br>在使用docker [container] run命令时，可以使用-mount选项来使用数据卷<br>-mount选项支持3种类型的数据卷<br>1）volume:普通数据卷，映射到主机/var/lib/docker/volumes路径下<br>2）bind：绑定数据卷，映射到主机指定路径下<br>3）tmpfs：临时数据卷，只存在于内存中<br>实例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker run -d -P --name web -v /src/webapp:/opt/webapp training/webapp python app.py</span></span><br><span class="line">Unable to find image <span class="string">&#x27;training/webapp:latest&#x27;</span> locally</span><br><span class="line">latest: Pulling from training/webapp</span><br><span class="line">Image docker.io/training/webapp:latest uses outdated schema1 manifest format. Please upgrade to a schema2 image <span class="keyword">for</span> better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/</span><br><span class="line">e190868d63f8: Pull complete </span><br><span class="line">909cd34c6fd7: Pull complete </span><br><span class="line">0b9bfabab7c1: Pull complete </span><br><span class="line">a3ed95caeb02: Pull complete </span><br><span class="line">10bbbc0fc0ff: Pull complete </span><br><span class="line">fca59b508e9f: Pull complete </span><br><span class="line">e7ae2541b15b: Pull complete </span><br><span class="line">9dd97ef58ce9: Pull complete </span><br><span class="line">a4c1b0cb7af7: Pull complete </span><br><span class="line">Digest: sha256:06e9c1983bd6d5db5fba376ccd63bfa529e8d02f23d5079b8f74a616308fb11d</span><br><span class="line">Status: Downloaded newer image <span class="keyword">for</span> training/webapp:latest</span><br><span class="line">392e8e357fac89c329e4920eb24b2d780b303942d085087285f7f6bc01a957e0</span><br></pre></td></tr></table></figure>
+<p>*上面的命令加载主机的 /src/webapp 目录到容器的 /opt/webapp 目录。这个功能在进行测试的时候十分方便，比如用户可以放置一些程序到本地目录中，来查看容器是否正常工作。本地目录的路径必须是绝对路径，如果目录不存在 Docker 会自动为你创建它。<br>3.查看数据卷具体信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker inspect web</span></span><br><span class="line"><span class="string">&quot;Mounts&quot;</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;Type&quot;</span>: <span class="string">&quot;bind&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Source&quot;</span>: <span class="string">&quot;/src/webapp&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Destination&quot;</span>: <span class="string">&quot;/opt/webapp&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Mode&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;RW&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">&quot;Propagation&quot;</span>: <span class="string">&quot;rprivate&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
+<h3 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h3><blockquote>
+<p>如果你有一些持续更新的数据需要在容器之间共享，最好创建数据卷容器。数据卷容器，其实就是一个正常的容器，专门用来提供数据卷供其它容器挂载的</p>
+</blockquote>
+<p>首先，创建一个名为 dbdata 的数据卷容器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker run -d -v /dbdata --name dbdata ubuntu</span></span><br></pre></td></tr></table></figure>
+<p>然后，可以在其他容器中使用—volumes-from 来挂载dbdata容器中的数据卷</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos7 ~]<span class="comment"># docker run -d --volumes-from dbdata --name db1 ubuntu</span></span><br><span class="line">[root@centos7 ~]<span class="comment"># docker run -d --volumes-from dbdata --name db2 ubuntu</span></span><br></pre></td></tr></table></figure>
+<p>此时，容器db1和db2都挂载同一个数据卷到相同到/dbdata目录，三个容器任何一方在该目录下到写入，其他容器都可以看到</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>有些时候不希望将数据保存在宿主机或容器中，还可以使用tmpfs类型都数据卷，其中数据只存在内存中，容器退出后自动删除</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/19/docker%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-操作docker容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -842,84 +936,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-云服务器安装MikrotikROS路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/">云服务器安装MikrotikROS路由</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/" class="archive-article-date">
-  	<time datetime="2021-07-26T15:56:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装wget命令"><a href="#安装wget命令" class="headerlink" title="安装wget命令"></a>安装wget命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install wget -y</span><br></pre></td></tr></table></figure>
-<h2 id="下载镜像，解压"><a href="#下载镜像，解压" class="headerlink" title="下载镜像，解压"></a>下载镜像，解压</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.mikrotik.com/routeros/6.45.8/chr-6.45.8.img.zip -O chr.img.zip</span><br><span class="line">gunzip -c chr.img.zip &gt; chr.img</span><br></pre></td></tr></table></figure>
-<h2 id="查询镜像start值"><a href="#查询镜像start值" class="headerlink" title="查询镜像start值"></a>查询镜像start值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -lu chr.img</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mikrotik</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/26/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85MikrotikROS%E8%B7%AF%E7%94%B1/">展开全文 >></a>
         </p>
       
 
