@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-docker端口映射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/docker%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/">docker端口映射</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/19/docker%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/" class="archive-article-date">
+  	<time datetime="2021-08-19T15:03:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Docker允许通过外部访问容器或者容器之间互联的方式来提供网络服务。<br>容器启动之后，容器中可以运行一些网络应用，通过-p或-P参数来指定端口映射。</p>
+<blockquote>
+<p>宿主机的一个端口只能映射到容器内部的某一个端口上，比如：8080-&gt;80之后，就不能8080-&gt;81,容器内部的某个端口可以被宿主机的多个端口映射,比如：8080-&gt;80，8090-&gt;80,8099-&gt;80</p>
+</blockquote>
+<h3 id="端口映射实现容器访问"><a href="#端口映射实现容器访问" class="headerlink" title="端口映射实现容器访问"></a>端口映射实现容器访问</h3><p>1.从外部访问容器应用<br>容器中可以运行一些网络应用，要让外部也可以访问这些应用，可以通过 -P 或 -p 参数来指定端口映射。<br>当使用 -P 标记时，Docker 会随机映射一个 49000~49900 的端口到内部容器开放的网络端口。<br>实例：</p>
+        
+          <a class="article-more-a" href="/2021/08/19/docker%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">端口映射</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/19/docker%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker数据管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -884,87 +964,6 @@
 
 
   
-    <article id="post-VPN技术简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/">VPN技术简介</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  	<time datetime="2021-07-28T03:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是VPN？"><a href="#什么是VPN？" class="headerlink" title="什么是VPN？"></a>什么是VPN？</h2><p>&ensp;&ensp;VPN是指在公用网络上建立一个私有的、专用的虚拟通信网络。在企业网络中VPN广泛应用于分支机构和出差员工连接公司总部网络。</p>
-<blockquote>
-<p>按照VPN技术实现的网络层次进行分类：</p>
-</blockquote>
-<p>a.基于数据链路层的VPN：L2TP、L2F、PPTP。其中L2F和PPTP已经基本上被L2TP替代了，强叔不再关注这两种技术了。<br>b.基于网络层的VPN：GRE、IPSec。<br>c.基于应用层的VPN：SSL。</p>
-<h2 id="VPN用到的关键技术点"><a href="#VPN用到的关键技术点" class="headerlink" title="VPN用到的关键技术点"></a>VPN用到的关键技术点</h2><p>1、隧道技术<br>&ensp;&ensp;隧道技术是vpn的基本技术，类似于点到点连接技术。它的基本过程就是在数据进入源VPN网关后，将数据“封装”后通过公网传输到目的VPN网关后再对数据“解封装”。“封装/解封装”过程本身就可以为原始报文提供安全防护功能，所以被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
-        
-          <a class="article-more-a" href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/28/VPN%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1131,6 +1130,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">端口映射</a>
               </li>
             
             <div class="clearfix"></div>
