@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-img2kvm安装与使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/27/img2kvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">img2kvm安装与使用</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/27/img2kvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-09-27T06:29:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是img2kvm"><a href="#什么是img2kvm" class="headerlink" title="什么是img2kvm?"></a>什么是img2kvm?</h2><p>img2kvm是一个在PVE下将OW固件添加到VM的工具，可以方便地将固件文件（包括gz方式的压缩格式）快速添加到OW虚拟机中，从而简化让人工操作的麻烦。</p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line">wget <span class="string">&quot;https://yun.94ish.me/%E8%BD%AF%E4%BB%B6/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/img2kvm&quot;</span></span><br><span class="line">chmod +x img2kvm</span><br></pre></td></tr></table></figure>
+<h2 id="使用语法："><a href="#使用语法：" class="headerlink" title="使用语法："></a>使用语法：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img2kvm &lt;img_name&gt; &lt;vm_id&gt; &lt;vmdisk_name&gt; [storage]</span><br></pre></td></tr></table></figure>
+<h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><p>1.img_name：是IMG文件名称。一般为“xxx.img”或“xxx.img.gz”的格式。img2kvm可以直接识别并转换“img.gz”压缩格式的固件文件，对于“xxx.img.gz”来说，只需要输入“xxx.img”作为名称即可，不必再另外加“.gz”。</p>
+<p>2.vm_id：是创建好的虚拟机的ID。一般为一组非零开头的数字，如100。</p>
+<p>3.vmdisk_name：是虚拟机要使用的磁盘名称。建议采用vm-<vm_id>-disk-<disk_id>的命名方式，如vm-100-disk-1。</p>
+<p>4.storage：是指导入使用的存储池的ID，默认为“local-lvm”，这是安装PVE时自动创建的。此项为可选项，若不指定则使用默认值。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pve虚拟机</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/27/img2kvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker端口映射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -876,94 +956,6 @@
 
 
   
-    <article id="post-GRE隧道原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/28/GRE%E9%9A%A7%E9%81%93%E5%8E%9F%E7%90%86/">GRE隧道原理</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/28/GRE%E9%9A%A7%E9%81%93%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-07-28T07:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="GRE简介："><a href="#GRE简介：" class="headerlink" title="GRE简介："></a>GRE简介：</h2><p>&ensp;&ensp;GRE（General Routing Encapsulation）即通用路由封装协议，可以对某些网络层协议的数据报进行封装，使这些被封装的数据报能够在IPv4网络中传输。</p>
-<h2 id="基本的构成要素："><a href="#基本的构成要素：" class="headerlink" title="基本的构成要素："></a>基本的构成要素：</h2><p>1、乘客协议</p>
-<blockquote>
-<p>为了便于理解封装技术，我们用邮政系统打个比方。乘客协议就是我们写的信，信的语言可以是汉语、英语、法语等，具体如何解释由写信人、读信人自己负责。</p>
-</blockquote>
-<p>2、封装协议</p>
-<blockquote>
-<p>封装协议可以理解为信封，可能是平信、挂号或者是EMS，这对应于多种封装协议。</p>
-</blockquote>
-<p>3、运输协议</p>
-<blockquote>
-<p>运输协议就是信的运输方式，可以是陆运、海运或者空运，这对应于不同的运输协议。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2021/07/28/GRE%E9%9A%A7%E9%81%93%E5%8E%9F%E7%90%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/28/GRE%E9%9A%A7%E9%81%93%E5%8E%9F%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1134,6 +1126,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">端口映射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pve虚拟机</a>
               </li>
             
             <div class="clearfix"></div>
